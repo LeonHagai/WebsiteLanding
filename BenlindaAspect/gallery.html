@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .galleryBody {
+        width: 100%;
+        display: flex;
+        height: fit-content;
+        background: url("data/canvas.jpeg");
+        object-fit: cover;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+      }
+
+      .col {
+        padding: 20px 40px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .galleryContent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        padding: 20px;
+      }
+
+      .colorItem {
+        width: 120px;
+        height: 120px;
+        margin: 10px;
+      }
+
+      #colorItem1 {
+        background: #fff0ad;
+      }
+
+      #colorItem2 {
+        background: #ffbc65;
+      }
+
+      #colorItem3 {
+        background: #d09445;
+      }
+
+      #colorItem4 {
+        background: #8e5e20;
+      }
+
+      #colorItem5 {
+        background: #724100;
+      }
+
+      .textures {
+        height: fit-content;
+        margin: 10px;
+      }
+
+      .texttureItem img {
+        border-style: solid;
+        height: 250px;
+        width: 250px;
+        object-fit: cover;
+        margin: 15px;
+      }
+
+      .galleryContent .fonts {
+        width: fit-content;
+        height: fit-content;
+        padding: 0 30px;
+        margin: 5px 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .fonts h2 {
+        font-size: 50px;
+        font-weight: 100;
+        padding: 20px;
+        background: #ffee8b;
+      }
+
+      .inspirationItem img {
+        width: 400px;
+        height: 200px;
+        margin: 15px;
+        object-fit: cover;
+      }
+
+      /* sidebar */
+      .sidebar {
+        padding: 20px;
+        width: 200px;
+        position: absolute;
+      }
+
+      .designerNotes .galleryContent ul,
+      .otherElements .galleryContent ul {
+        margin: 7px;
+        padding: 7px;
+        list-style: none;
+      }
+
+      .otherElements .galleryContent ul li button {
+        border: none;
+        outline: none;
+        font-size: 15px;
+        font-weight: 200;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 5px;
+        background: rgb(204, 171, 75);
+        color: rgba(63, 44, 7, 0.744);
+      }
+      .otherElements .galleryContent ul li button:hover {
+        background: rgba(18, 12, 0, 0.744);
+        color: rgb(255, 225, 135);
+      }
+
+      .otherElements .galleryContent ul li {
+        margin-bottom: 30px;
+      }
+
+      .otherElements .galleryContent {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .otherNavLink {
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 20px;
+        background: rgb(255, 254, 251);
+        color: rgba(121, 82, 4, 0.744);
+      }
+
+      .otherNavLink:hover {
+        background: rgba(121, 82, 4, 0.744);
+        color: rgb(255, 254, 251);
+      }
+
+      .socialLinks .galleryContent {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .socialLinks .galleryContent input {
+        width: 200px;
+        height: 23px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        background: #ffee8b;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .socialLinks .galleryContent input:hover {
+        background: #f1f1f1;
+      }
+
+      .socialLink a {
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 50%;
+        margin: 0px;
+      }
+
+      .socialLink a img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .sectionTitle h3 {
+        font-size: 15px;
+      }
+      /* small screen */
+      @media (max-width: 700px) {
+        #mainContent {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="galleryBody">
+      <div class="col" id="mainContent">
+        <section class="colorPalette">
+          <div class="sectionTitle">
+            <h2>Color Palette</h2>
+          </div>
+          <div class="galleryContent">
+            <div class="colorItem" id="colorItem1"></div>
+            <div class="colorItem" id="colorItem2"></div>
+            <div class="colorItem" id="colorItem3"></div>
+            <div class="colorItem" id="colorItem4"></div>
+            <div class="colorItem" id="colorItem5"></div>
+          </div>
+        </section>
+
+        <section class="textures" id="textures">
+          <div class="sectionTitle">
+            <h2>Textures</h2>
+          </div>
+          <div class="galleryContent">
+            <div class="texttureItem">
+              <img src="data/screenshot.png" alt="photo" />
+            </div>
+            <div class="texttureItem">
+              <img src="data/screenshot2.png" alt="photo" />
+            </div>
+            <div class="texttureItem">
+              <img src="data/flower4.jpg" alt="photo" />
+            </div>
+          </div>
+        </section>
+
+        <section class="photography" id="photography">
+          <div class="sectionTitle">
+            <h2>Photography & Illustrations</h2>
+          </div>
+
+          <div class="galleryContent">
+            <div class="texttureItem">
+              <img src="data/flower1.jpg" alt="" />
+            </div>
+            <div class="texttureItem">
+              <img src="data/flower2.jpg" alt="" />
+            </div>
+            <div class="texttureItem">
+              <img src="data/flower6.jpg" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section class="typography" id="typography">
+          <div class="sectionTitle">
+            <h2>Typography</h2>
+          </div>
+          <div class="galleryContent">
+            <div class="fonts">
+              <h2
+                style="
+                  font-family: Georgia, 'Times New Roman', Times, serif;
+                  font-style: italic;
+                "
+              >
+                Aspects
+              </h2>
+              <h4>Font: Cookie</h4>
+            </div>
+            <div class="fonts">
+              <h2
+                style="
+                  font-family: 'Gill Sans', 'Gill Sans MT', Calibri,
+                    'Trebuchet MS', sans-serif;
+                  font-style: italic;
+                "
+              >
+                Aspects
+              </h2>
+              <h4>Font: Benne</h4>
+            </div>
+            <div class="fonts">
+              <h2
+                style="
+                  font-family: 'Trebuchet MS', 'Lucida Sans Unicode',
+                    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                "
+              >
+                Aspects
+              </h2>
+              <h4>Font: Font Bentto Personal User</h4>
+            </div>
+          </div>
+        </section>
+
+        <section class="inspiration" id="inspiration">
+          <div class="sectionTitle">
+            <h2>Inspiration</h2>
+          </div>
+
+          <div class="galleryContent">
+            <div class="inspirationItem">
+              <img src="data/bride5.png" alt="photo" />
+            </div>
+            <div class="inspirationItem">
+              <img src="data/bride6.png" alt="photo" />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col" id="sidebar">
+        <section class="designerNotes" id="designerNotes">
+          <div class="sectionTitle">
+            <h3>Designer Notes</h3>
+          </div>
+          <div class="galleryContent">
+            <ul>
+              <li>Stock Photo</li>
+              <li>Social Icon</li>
+              <li>Cart Icon</li>
+              <li>Dividers</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="otherElements" id="otherElements">
+          <div class="sectionTitle">
+            <h3>Other Elements / Button Styles</h3>
+          </div>
+          <div class="galleryContent">
+            <ul>
+              <li>
+                <a href="index.html#about_us" class="otherNavLink">ABOUT</a>
+              </li>
+              <li>
+                <a href="index.html#ourworks" class="otherNavLink">OUR WORKS</a>
+              </li>
+              <li><a href="index.html#shop" class="otherNavLink">SHOP</a></li>
+              <li>
+                <a href="index.html#about" class="otherNavLink">CONTACT</a>
+              </li>
+            </ul>
+            <ul>
+              <li><button>Shop Now</button></li>
+              <li><button>Work With Us</button></li>
+              <li><button>More About Us</button></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="socialLinks" id="socialLinks">
+          <div class="galleryContent">
+            <input type="text" name="input" id="input" placeholder="Search" />
+            <div class="socialLink">
+              <a href="https://facebook" class=""
+                ><img src="data/ic_fb.png" alt=""
+              /></a>
+              <a href="https://instagram" class=""
+                ><img src="data/ic_insta2.jpg" alt=""
+              /></a>
+              <a href="https://youtube" class=""
+                ><img src="data/ic_youtube.png" alt=""
+              /></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
